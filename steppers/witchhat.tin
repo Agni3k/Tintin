@@ -1,0 +1,33 @@
+#class {bot} {open}
+
+#var {no_loop} {1}
+#var {no_home} {1}
+#var {lootmode} {1}
+
+#var {botpath} {
+sw;e;s;sw;sw;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;
+w;w;w;nw;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;e;
+e;e;e;ne;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;
+w;w;w;w;w;n;n;se;se;e;e;e;e;e;e;e;e;e;ne;e;e;e;e;e;e;e;e;e;e;e;e;nw;w;w;
+w;w;w;w;w;w;w;w;ne;e;e;e;e;e;e;e;e;nw;w;w;w;w;w;w;nw;e;e;e;e;e;e;nw;nw;
+nw;w;se;se;w;nw;nw;w;se;se;w;nw;nw;w;se;se;w;nw;nw;s;se;w;nw;s;s;nw;s;s
+}
+
+
+#act {^=M= {A small ball of fuzz|A large ball of fuzz}} {
+	#switch {"%1"} {
+		#case {"A small ball of fuzz"}		{#var mobname fuzz};
+		#case {"A large ball of fuzz"}		{#var mobname fuzz};
+	};
+	_check_mob;
+}
+
+
+
+#alias {loadlint} {pull lever;get capacitor;open capacitor;
+		#12 insert lint;close capacitor;load capacitor;
+		pull lever;push green button;pull lever;get capacitor;
+		open capacitor;#12 insert lint;close capacitor;
+		load capacitor;pull lever;push green button;push red button}
+
+#class {bot} {close}
